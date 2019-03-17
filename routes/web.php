@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', 'PagesController@index');
+Route::get('/offers', 'PagesController@offers')->name('offers');
+Route::get('/promotions', 'PagesController@promotions')->name('promotions');
 
 
 Auth::routes();
