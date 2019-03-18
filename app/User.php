@@ -36,4 +36,18 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function __constructor($name){
+        $this->name = $name;
+    }
+
+    public function getName(){
+        return $this->name;
+    }
+
+    public function mostrarInfo(){
+        $info = 'Bienvenido';
+        $info =getName();
+        return $info;
+    }
 }
