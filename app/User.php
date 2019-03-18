@@ -45,9 +45,8 @@ class User extends Authenticatable
         return $this->name;
     }
 
-    public function mostrarInfo(){
-        $info = 'Bienvenido';
-        $info =getName();
-        return $info;
+    public function promotions(){
+        return $this->hasMany('App\Post');
     }
+    
 }
