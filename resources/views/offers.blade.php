@@ -8,6 +8,7 @@
             <div class="wll">
                 <h3>{{ $offer->Offers_name }}</h3>
                 <p>{{ $offer->description}}</p>
+                <a class="btn btn-success">Canjear Cupón</a>
             </div>
         @endforeach
     @endif
