@@ -4,12 +4,15 @@
 @section('content')
     <p>Aquí encontrará diferentes ofertas que le puedan interesar, ya sean noches gratuitas, descuentos para hoteles, entre otros...</p>
     @if(count ($offers) > 0)
-        @foreach($offers as $offer)
-            <div class="wll">
-                <h3>{{ $offer->Offers_name }}</h3>
-                <p>{{ $offer->description}}</p>
-                <a class="btn btn-success">Canjear Cupón</a>
-            </div>
+        
+            {{!! Form::open(['action' => 'PromotionsController@store', 'method' => 'POST']) !!}}
+            @foreach($offers as $offer)
+                <div class="form-group">
+                    {{ Form::label('title', $offer->Offers_name)}}
+                    {{ Form::label('body', $offer->description)}}
+                </div>
+                {{ Form::submit('Canjear Cupón', ['class' => 'btn  btn-primary']) }}
+           {{ !! Form::close() }}
         @endforeach
     @endif
 @endsection
