@@ -11,4 +11,7 @@ class Offer extends Model
     public $primaryKey = 'id';
 
     public $timestamps = true;
+
+
+    
 }
