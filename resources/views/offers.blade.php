@@ -16,5 +16,5 @@
           
         @endforeach
     @endif
-    { !!Form::close()!!}
+    { !!Form::close()!! }
 @endsection
