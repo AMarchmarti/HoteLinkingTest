@@ -18,9 +18,9 @@
                             </tr>
                             @foreach ($promotions as $promotion)
                                 <tr>
-                                    <th>{{ $offerts->title }}</th>
-                                    <th></th>
-                                    <th></th>
+                                    <td>{{ $offerts->title }}</td>
+                                    <td></td>
+                                    <td></td>
                                 </tr>
                                 
                             @endforeach
