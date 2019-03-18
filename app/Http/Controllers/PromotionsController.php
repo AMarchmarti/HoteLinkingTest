@@ -14,7 +14,9 @@ class PromotionsController extends Controller
      */
     public function index()
     {
-        return view('promotions');
+        $user_name = auth()->user()->name;
+        $user = User::find($user_name);     
+        return view('promotions')->with('promotions', $user->promotions);
     }
 
     
@@ -30,12 +32,7 @@ class PromotionsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {/*
-        $this->validate($request, [
-            'title' => 'required',
-            'body' => 'required'
-        ]);
-        
+    {
         $promotion = new Promotion;
         $promotion->id = $request->get('id');
         $promotion->user_id = auth()->user()->id;
@@ -45,7 +42,7 @@ class PromotionsController extends Controller
         $promotion->save();
         
         return redirect('/promotions')->with('success', 'Cupón Canjeado');
-*/
+
     }
 
     /**
