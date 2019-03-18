@@ -20,7 +20,7 @@ class OffersController extends Controller
     
     public function store(Request $request)
     {
-       
+       //
     }
     /**
      * Display the specified resource.
@@ -64,4 +64,4 @@ class OffersController extends Controller
         //
     }
 }
-}
+
