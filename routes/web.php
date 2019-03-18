@@ -16,4 +16,11 @@ Route::get('/offers', 'PagesController@offers')->name('offers');
 Route::get('/promotions', 'PagesController@promotions')->name('promotions');
 
 Route::resource('offers', 'OffersController');
+
 Auth::routes();
+
+Route::get('/dashboard', 'DashboardController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
