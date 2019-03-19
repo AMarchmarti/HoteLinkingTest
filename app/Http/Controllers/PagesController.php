@@ -14,7 +14,7 @@ class PagesController extends Controller
         return view('offers');
     }
 
-    public function myoffers(){
-        return view('MisOfertas');
+    public function promotions(){
+        return view('promotions');
     }
 }

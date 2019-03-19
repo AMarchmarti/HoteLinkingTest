@@ -11,7 +11,7 @@ class OffersController extends Controller
     public function index()
     {   
         $offers = Offer::all();
-        return view('offers')->with('offers', $offers);
+        return view('seleccion')->with('offers', $offers);
     }
 
     public function create()
@@ -22,12 +22,10 @@ class OffersController extends Controller
     public function store(Request $request)
     {
         $offers = new Offer;
-        $offers->name = $request->get('title');
-        $offers->description = $request->get('body');
         $offers->user_id = auth()->user()->id;
-        //$offers->cover_image = $fileNameToStore;
+        $offers->code = $request->input('code');
         $offers->save();
-        return redirect('/offers')->with('status', 'La oferta ha sido canjeada.' );
+        return redirect('/promotions')->with('status', 'La oferta ha sido canjeada.' );
     }
     /**
      * Display the specified resource.
@@ -58,7 +56,11 @@ class OffersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $offers = Offer::find($id);
+        $offers->user_id = auth()->user()->id;
+
+        $offers->save();
+        return redirect('/offers')->with('status', 'La oferta ha sido canjeada.' );
     }
     /**
      * Remove the specified resource from storage.
