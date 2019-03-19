@@ -22,10 +22,11 @@ class OffersController extends Controller
     public function store(Request $request)
     {
         $offers = new Offer;
+        $offers->user_name = auth()->user()->name;
         $offers->user_id = auth()->user()->id;
         $offers->code = $request->input('code');
         $offers->save();
-        return redirect('/promotions')->with('status', 'La oferta ha sido canjeada.' );
+        return redirect('/offers')->with('status', 'La oferta ha sido canjeada.' );
     }
     /**
      * Display the specified resource.
