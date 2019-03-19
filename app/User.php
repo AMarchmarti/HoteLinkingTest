@@ -37,15 +37,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function __constructor($name){
-        $this->name = $name;
-    }
 
-    public function getName(){
-        return $this->name;
-    }
-
-    public function promotions(){
+    public function offers(){
         return $this->hasMany('App\Offers');
     }
     

@@ -13,9 +13,6 @@
             <li class="nav-item">
                 <a class="nav-link" href="/HoteLinkingTest/public/offers">Offers</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/HoteLinkingTest/public/promotions">Promotions</a>
-            </li>
             </li>
         </ul>
 
