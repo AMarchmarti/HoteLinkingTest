@@ -17,6 +17,6 @@
                     <input type="Código" class="form-control" id="inputPassword2" placeholder="Código">
                 </div>
                 <button type="submit" class="btn btn-primary mb-2"
-                    onclick="alert('Código canjeado, revise su E-Mail')">Canjear Código</button>
+                    onclick="alert('Código canjeado')">Canjear Código</button>
       </main><!-- /.container -->
 @endsection
