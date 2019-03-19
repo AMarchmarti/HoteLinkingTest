@@ -46,7 +46,7 @@ class User extends Authenticatable
     }
 
     public function promotions(){
-        return $this->hasMany('App\Post');
+        return $this->hasMany('App\Offers');
     }
     
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePromotionsTable extends Migration
+class AddUserIdToOffers extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class CreatePromotionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('promotions', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::table('offers', function($table){
             $table->integer('user_id');
-            $table->integer('offers_id');
-            $table->string('code');
-            $table->tinyInteger('status');
         });
     }
 
@@ -29,6 +25,8 @@ class CreatePromotionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('promotions');
+        Schema::table('offers', function (Blueprint $table) {
+            $table->dropColumn('user_id');
+        });
     }
 }

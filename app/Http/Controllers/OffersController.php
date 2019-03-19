@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Offer;
+use DB;
 
 class OffersController extends Controller
 {
@@ -15,12 +16,18 @@ class OffersController extends Controller
 
     public function create()
     {
-        //
+        return view('/offers');
     }
     
     public function store(Request $request)
     {
-       //
+        $offers = new Offer;
+        $offers->name = $request->get('title');
+        $offers->description = $request->get('body');
+        $offers->user_id = auth()->user()->id;
+        //$offers->cover_image = $fileNameToStore;
+        $offers->save();
+        return redirect('/offers')->with('status', 'La oferta ha sido canjeada.' );
     }
     /**
      * Display the specified resource.
